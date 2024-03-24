@@ -72,6 +72,9 @@ public:
   Eigen::MatrixXd P_;
 
   Eigen::VectorXd z_;
+
+  Eigen::VectorXd meas_t_; // saved measurement
+
   Eigen::VectorXd z_pred_;
 
   // predicted sigma points matrix
@@ -92,6 +95,8 @@ public:
   Eigen::MatrixXd R_radar_;
   // measurement noise covariance matrix for lidar
   Eigen::MatrixXd R_lidar_;
+  // measurement noise covariance matrix for velocity from history
+  Eigen::MatrixXd R_v_;
 
   // time when the state is true, in us
   long long time_us_;
